@@ -1,6 +1,6 @@
 # Heterogeneous Subgraph Transformer for Fake News Detection
 
-### This repository is the official implementation of "Heterogeneous Subgraph Transformer for Fake News Detection" 
+### This repository is the official implementation of "Heterogeneous Subgraph Transformer for Fake News Detection" (WWW' 24)
 
 ## Datasets
 To access the datasets used in this study, please use the following links:
