@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 
 def load_data(args):
-    graph = torch.load(f"../Data-TransFD/{args.dataset}/graph/{args.dataset}_{args.hiddenSize}_final.pt", map_location=torch.device('cpu'))
+    graph = torch.load(f"../Data/{args.dataset}/graph/{args.dataset}_{args.hiddenSize}_final.pt", map_location=torch.device('cpu'))
     print(graph)
     walk_list,labels,inner_list,type_list = rw.rand_walk(args.dataset, args.restart, args.num_laps, args.walk_length)
     test_ratio = 0.1
