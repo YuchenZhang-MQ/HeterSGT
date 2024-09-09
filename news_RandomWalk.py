@@ -37,11 +37,11 @@ def inner2df(data,colsname,typename):
 
 def get_inner_type(dataset,walk_list):
 
-    news_index = np.load(f"../Data-TransFD/{dataset}/graph/nodes/news_index.npy", allow_pickle=True).item()
-    entity_index = np.load(f"../Data-TransFD/{dataset}/graph/nodes/entity_index.npy", allow_pickle=True).item()
-    topic_index = np.load(f"../Data-TransFD/{dataset}/graph/nodes/topic_index.npy", allow_pickle=True).item()
+    news_index = np.load(f"../Data/{dataset}/graph/nodes/news_index.npy", allow_pickle=True).item()
+    entity_index = np.load(f"../Data/{dataset}/graph/nodes/entity_index.npy", allow_pickle=True).item()
+    topic_index = np.load(f"../Data/{dataset}/graph/nodes/topic_index.npy", allow_pickle=True).item()
 
-    global_index1 = np.load(f"../Data-TransFD/{dataset}/graph/nodes/global_index_graph1.npy", allow_pickle=True).item()
+    global_index1 = np.load(f"../Data/{dataset}/graph/nodes/global_index_graph1.npy", allow_pickle=True).item()
 
     global_df1 = global2df(global_index1,["name", "g_id"])
     news_df = inner2df(news_index,["name", "inner_id"],0)
@@ -67,8 +67,8 @@ def get_inner_type(dataset,walk_list):
 
 
 def rand_walk(dataset, restart, num_laps = 1, walk_length = 5):
-    G = graph.load_edgelist(f"../Data-TransFD/{dataset}/graph/edges/{dataset}.edgelist", undirected=True)
-    df= pd.read_excel(f"../Data-TransFD/{dataset}/news_final.xlsx")
+    G = graph.load_edgelist(f"../Data/{dataset}/graph/edges/{dataset}.edgelist", undirected=True)
+    df= pd.read_excel(f"../Data/{dataset}/news_final.xlsx")
     num_news = len(df['news_id'].tolist())
     label = df['label'].tolist()
     labels = label * num_laps  
